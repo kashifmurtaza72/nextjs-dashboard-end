@@ -51,7 +51,7 @@ export default async function RevenueChart({
                 }}
               ></div>
               <p className="-rotate-90 text-sm text-gray-400 sm:rotate-0">
-                {month.month} riaz khan 
+                {month.month} 
               </p>
             </div>
           ))}
