@@ -13,12 +13,12 @@ const FormSchema = z.object({
   date: z.string(),
 });
 //https://v3.zod.dev/?id=pickomit  omit means skip/ignore during validation
-const CreateInvoicee = FormSchema.omit({ id: true, date: true });
+const CreateInvoiceData = FormSchema.omit({ id: true, date: true });
 
 export async function createInvoice(formData: FormData) {
   //Given any Zod schema 'FormSchema', use .parse to validate an input
   //When validation fails, the .parse() method will throw a ZodError
-  const { customerId, amount, status } = CreateInvoicee.parse({
+  const { customerId, amount, status } = CreateInvoiceData.parse({
     customerId: formData.get("customerId"),
     amount: formData.get("amount"),
     status: formData.get("status"),
