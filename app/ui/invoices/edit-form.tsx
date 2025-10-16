@@ -1,19 +1,24 @@
-'use client';
+"use client";
 
-import { CustomerField, InvoiceForm } from '@/app/lib/definitions';
-import { updateInvoice } from '@/app/lib/actions';
+import { CustomerField, InvoiceForm } from "@/app/lib/definitions";
+import { updateInvoice } from "@/app/lib/actions";
 
 import {
   CheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
-} from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { Button } from '@/app/ui/button';
+} from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { Button } from "@/app/ui/button";
 
-export default function EditInvoiceForm({invoice, customers, }: { invoice: InvoiceForm; customers: CustomerField[]; })
- {
+export default function EditInvoiceForm({
+  invoice,
+  customers,
+}: {
+  invoice: InvoiceForm;
+  customers: CustomerField[];
+}) {
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
   return (
     <form action={updateInvoiceWithId}>
@@ -77,7 +82,7 @@ export default function EditInvoiceForm({invoice, customers, }: { invoice: Invoi
                   name="status"
                   type="radio"
                   value="pending"
-                  defaultChecked={invoice.status === 'pending'}
+                  defaultChecked={invoice.status === "pending"}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -93,7 +98,7 @@ export default function EditInvoiceForm({invoice, customers, }: { invoice: Invoi
                   name="status"
                   type="radio"
                   value="paid"
-                  defaultChecked={invoice.status === 'paid'}
+                  defaultChecked={invoice.status === "paid"}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
